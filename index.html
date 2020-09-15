@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style.css">
+		<script src="./script.js" defer></script>
+		<title>Je... Aled</title>
+	</head>
+	<body>
+		<h1>Welcome to my website Aled</h1>
+		<div class="timer-container">
+			<button onclick="openForm()" class="btn" id="timer-btn" href="#">Timer</button>
+			<div class="timer-form-popup" id="timer-form">
+				<form action="./timer/" id="timer-form-container">
+					<div class="textbox">
+						<label for="Event"><b>Event</b></label>
+						<input type="text" placeholder="Enter event name" name="event">
+					</div>
+					<div class="textbox">
+						<label for="Date"><b>Date</b></label>
+						<input type="date" name="date">	
+					</div>
+					<button type="submit" class="btn">Access timer</button>
+					<button type="reset" class="btn" onclick="closeForm()">Close</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

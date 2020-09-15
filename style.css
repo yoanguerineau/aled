@@ -1,0 +1,34 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+}
+
+.timer-form-popup {
+	display: none;
+	margin: 0 auto;
+	width: 250px;
+	border: 2px solid rgba(210, 210, 210, 0.7);
+	box-shadow: 0 0 10px 2px rgba(120, 120, 120, 0.1);
+	background-color: rgb(221, 237, 250);
+	padding: 0.3rem;
+	border-radius: 20px;
+}
+
+.timer-form-popup .textbox {
+	margin: 0.25rem;
+}
+
+.btn {
+	cursor: pointer;
+	margin: 0 auto;
+	background-color: rgb(234, 236, 238);
+	border-radius: 5px;
+	border-width: thin;
+	width: 100px;
+}
