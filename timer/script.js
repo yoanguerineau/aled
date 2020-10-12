@@ -23,6 +23,7 @@ const currentDate = new Date();
 //picking parameters from the URL
 const params = new URLSearchParams(window.location.search);
 var date = new Date(params.get('date'));
+date = new Date(date.getFullYear(),date.getMonth(),date.getDate());
 var event = params.get('event');
 
 //checking if everything is correct, if not, setting stuff to new years eve
@@ -34,7 +35,8 @@ eventElem.innerHTML = event;
 
 function timer() {
 	const currentDate = new Date();
-	const totalSeconds = Math.floor((date-currentDate)/1000);
+	const offset = Math.abs(date.getTimezoneOffset())-Math.abs(currentDate.getTimezoneOffset());
+	const totalSeconds = Math.floor((date-currentDate)/1000)+offset*60;
 
 	const days = Math.floor(totalSeconds / 3600 / 24);
 	const hours = Math.floor(totalSeconds / 3600 % 24);
@@ -42,7 +44,7 @@ function timer() {
 	const seconds = Math.floor(totalSeconds % 60);
 	
 	daysElem.innerHTML = days;
-	hoursElem.innerHTML = format(hours-1);
+	hoursElem.innerHTML = format(hours);
 	minutesElem.innerHTML = format(minutes);
 	secondsElem.innerHTML = format(seconds);
 }
