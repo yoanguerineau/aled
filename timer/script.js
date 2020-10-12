@@ -8,7 +8,7 @@ function format(num){
 }
 
 //selecting background randomly, change the following const to add files
-const pic_nb = 2;
+const pic_nb = 6;
 document.body.style.backgroundImage = `url('./background_pictures/${getRandomInt(pic_nb)}.jpg')`;
 
 //picking elements that might need to be modified
@@ -23,6 +23,7 @@ const currentDate = new Date();
 //picking parameters from the URL
 const params = new URLSearchParams(window.location.search);
 var date = new Date(params.get('date'));
+date = new Date(date.getFullYear(),date.getMonth(),date.getDate());
 var event = params.get('event');
 
 //checking if everything is correct, if not, setting stuff to new years eve
@@ -34,7 +35,8 @@ eventElem.innerHTML = event;
 
 function timer() {
 	const currentDate = new Date();
-	const totalSeconds = Math.floor((date-currentDate)/1000);
+	const offset = Math.abs(date.getTimezoneOffset())-Math.abs(currentDate.getTimezoneOffset());
+	const totalSeconds = Math.floor((date-currentDate)/1000)+offset*60;
 
 	const days = Math.floor(totalSeconds / 3600 / 24);
 	const hours = Math.floor(totalSeconds / 3600 % 24);
