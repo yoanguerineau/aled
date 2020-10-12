@@ -8,7 +8,7 @@ function format(num){
 }
 
 //selecting background randomly, change the following const to add files
-const pic_nb = 2;
+const pic_nb = 6;
 document.body.style.backgroundImage = `url('./background_pictures/${getRandomInt(pic_nb)}.jpg')`;
 
 //picking elements that might need to be modified
@@ -42,7 +42,7 @@ function timer() {
 	const seconds = Math.floor(totalSeconds % 60);
 	
 	daysElem.innerHTML = days;
-	hoursElem.innerHTML = format(hours);
+	hoursElem.innerHTML = format(hours-1);
 	minutesElem.innerHTML = format(minutes);
 	secondsElem.innerHTML = format(seconds);
 }
