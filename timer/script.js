@@ -10,6 +10,7 @@ function format(num){
 //selecting background randomly, change the following const to add files
 const pic_nb = 6;
 document.body.style.backgroundImage = `url('./background_pictures/${getRandomInt(pic_nb)}.jpg')`;
+console.log(process.env.PIXABAY_API_KEY);
 
 //picking elements that might need to be modified
 const eventElem = document.getElementById("event");
