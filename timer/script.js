@@ -14,7 +14,7 @@ $.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&q=lan
 	console.log(r);
 	console.log(data.hits[r]);
 	console.log(data.hits[r].largeImageURL);
-	document.body.style.backgroundImage = `url('data.hits[r].largeImageURL')`;
+	document.body.style.backgroundImage = `url(data.hits[r].largeImageURL)`;
         alert(document.body.style.backgroundImage)
 });
 
