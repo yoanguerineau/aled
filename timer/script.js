@@ -12,9 +12,9 @@ $.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&q=lan
 	console.log(data);
 	let r = getRandomInt(data.totalHits);
 	console.log(r);
-	console.log(data[r]);
-	console.log(data[r].largeImageURL);
-	document.body.style.backgroundImage = url(data[r].largeImageURL);
+	console.log(data.hits[r]);
+	console.log(data.hits[r].largeImageURL);
+	document.body.style.backgroundImage = url(data.hits[r].largeImageURL);
 });
 
 //picking elements that might need to be modified
