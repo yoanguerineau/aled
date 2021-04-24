@@ -9,13 +9,8 @@ function format(num){
 
 //selecting background randomly, change the following const to add files
 $.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&q=landscape&image_type=photo&pretty=true', (data) => {
-	console.log(data);
 	let r = getRandomInt(data.hits.length);
-	console.log(r);
-	console.log(data.hits[r]);
-	console.log(data.hits[r].largeImageURL);
 	document.body.style.backgroundImage = 'url('+data.hits[r].largeImageURL+')';
-        alert(document.body.style.backgroundImage)
 });
 
 //picking elements that might need to be modified
