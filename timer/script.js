@@ -1,6 +1,6 @@
-//returns values between 1 and max
+//returns values between 0 and max
 function getRandomInt(max){
-	return Math.floor(Math.random()*Math.floor(max))+1;
+	return Math.floor(Math.random()*Math.floor(max));
 }
 
 function format(num){
@@ -8,9 +8,14 @@ function format(num){
 }
 
 //selecting background randomly, change the following const to add files
-const pic_nb = 6;
-document.body.style.backgroundImage = `url('./background_pictures/${getRandomInt(pic_nb)}.jpg')`;
-console.log(process.env.PIXABAY_API_KEY);
+$.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&q=landscape&image_type=photo&pretty=true', (data) => {
+	console.log(data);
+	let r = getRandomInt(data.totalHits);
+	console.log(r);
+	console.log(data[r]);
+	console.log(data[r].largeImageURL);
+	document.body.style.backgroundImage = url(data[r].largeImageURL);
+});
 
 //picking elements that might need to be modified
 const eventElem = document.getElementById("event");
