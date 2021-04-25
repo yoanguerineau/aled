@@ -8,7 +8,7 @@ function format(num){
 }
 
 //selecting background randomly, change the following const to add files
-$.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&q=landscape&image_type=photo&pretty=true', (data) => {
+$.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&min_width=1920&min_height=1080&colors=white&cat=nature&orientation=horizontal', (data) => {
 	let r = getRandomInt(data.hits.length);
 	document.body.style.backgroundImage = 'url('+data.hits[r].largeImageURL+')';
 });
