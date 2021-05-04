@@ -7,8 +7,6 @@ function format(num){
 	return num <10 ? (`0${num}`) : num;
 }
 
-console.log(${{ secrets.PIXABAY_API_KEY }});
-
 //selecting background randomly, change the following const to add files
 $.getJSON('https://pixabay.com/api/?key=21310863-a96e63a9827c9770c07eb3bbd&image_type=photo&q=landscape&order=latest&min_width=1920&min_height=1080&colors=white&cat=nature&orientation=horizontal', (data) => {
 	let r = getRandomInt(data.hits.length);
